@@ -4,8 +4,5 @@ import 'package:flutter_driver/driver_extension.dart';
 
 void main() {
   enableFlutterDriverExtension();
-  return runApp(MyApp(
-    // without firebase analytics for testing
-    analytics: null,
-  ));
+  return runApp(MyApp());
 }
