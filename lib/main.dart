@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_starter_app/bloc/example_bloc.dart';
 import 'package:flutter_starter_app/utils/api/api.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_starter_app/utils/navigation/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:restui/restui.dart';
@@ -12,14 +13,13 @@ import 'package:flutter_i18n/flutter_i18n_delegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'config.dart';
-import 'utils/navigation/generate_route.dart';
 import 'utils/style_provider/style.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   /// App supported orientations init
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
+  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]).then(
     (_) {
       // Firebase analystics setup
       FirebaseAnalytics analytics = FirebaseAnalytics();
@@ -38,11 +38,11 @@ void main() {
 }
 
 const _appColors = const AppColors(
-  accent: Colors.redAccent,
-  secondaryAccent: Colors.blueAccent,
+  accent: Color(0xFF36D7B7),
+  secondaryAccent: Color(0xFF6C7A89),
   content: Colors.white,
   secondaryContent: Colors.black,
-  background: Colors.black,
+  background: Colors.white,
   secondaryBackground: Colors.white,
   shadow: Color.fromRGBO(0, 0, 0, 0.1),
   secondaryShadow: Color.fromRGBO(0, 0, 0, 0.05),
@@ -102,7 +102,7 @@ class MyApp extends StatelessWidget {
               FirebaseAnalyticsObserver(analytics: _analytics),
             ],
             onGenerateRoute: Routes.generateRoute,
-            initialRoute: Routes.home,
+            initialRoute: Routes.game,
           ),
           colors: _appColors,
         ),
