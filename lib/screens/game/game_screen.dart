@@ -15,8 +15,8 @@ class _GameScreenState extends State<GameScreen> {
             width: double.infinity,
             decoration: BoxDecoration(
                 gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
               colors: [Color(0xFF228B22), Color(0xFF32CD32)],
             )),
           ),

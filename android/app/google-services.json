@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "624256654651",
+    "firebase_url": "https://blef-bujny.firebaseio.com",
+    "project_id": "blef-bujny",
+    "storage_bucket": "blef-bujny.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624256654651:android:093c59ce1de9f27b016b1e",
+        "android_client_info": {
+          "package_name": "com.bujny.blef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624256654651-bno4drg3dudc8nfgc220n33odehsj9mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg-KTirONJvKJmA-V3EXSl3qZ-fsdgcKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624256654651-bno4drg3dudc8nfgc220n33odehsj9mr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "624256654651-vj0b8up4m2pm7g4vtsf8a98f31vk397d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bujny.blef"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

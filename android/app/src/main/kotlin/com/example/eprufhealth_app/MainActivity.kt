@@ -1,4 +1,4 @@
-package com.example.flutter_starter_app
+package com.example.blef
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

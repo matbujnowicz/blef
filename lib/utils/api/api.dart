@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:flutter_starter_app/utils/api/models/example_photo_model.dart';
+import 'package:blef/utils/api/models/example_photo_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:restui/restui.dart';
