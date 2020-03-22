@@ -16,7 +16,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   /// App supported orientations init
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
+  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]).then(
     (_) {
       // Firebase analystics setup
 
@@ -32,9 +32,9 @@ void main() {
 const _appColors = const AppColors(
   accent: Colors.redAccent,
   secondaryAccent: Colors.blueAccent,
-  content: Colors.white,
-  secondaryContent: Colors.black,
-  background: Colors.black,
+  content: Colors.black,
+  secondaryContent: Colors.white,
+  background: Colors.white,
   secondaryBackground: Colors.white,
   shadow: Color.fromRGBO(0, 0, 0, 0.1),
   secondaryShadow: Color.fromRGBO(0, 0, 0, 0.05),
