@@ -1,4 +1,4 @@
-import 'package:blef/models/card/card_model.dart';
+import 'package:blef/logic/models/card/card_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
