@@ -6,7 +6,7 @@ import 'figure.dart';
 class OnePairFigure extends Figure {
   static const _figureBaseValue = 200;
 
-  CardFace onePairFace;
+  final CardFace onePairFace;
 
   OnePairFigure(this.onePairFace);
 
@@ -17,12 +17,12 @@ class OnePairFigure extends Figure {
 
   @override
   bool findFigureInHand(HandModel handModel) {
-    int singleCardFound = 0;
+    int faceCardFoudn = 0;
 
     handModel.cards.forEach((card) {
-      if (card.cardFace == onePairFace) singleCardFound++;
+      if (card.cardFace == onePairFace) faceCardFoudn++;
     });
 
-    return singleCardFound >= 2;
+    return faceCardFoudn >= 2;
   }
 }

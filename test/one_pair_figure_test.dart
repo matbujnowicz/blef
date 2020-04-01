@@ -25,7 +25,7 @@ final handThree = HandModel([
   CardModel(cardSuit: CardSuit.Diamonds, cardFace: CardFace.Ace),
 ]);
 
-void highCardFigureTests() {
+void onePairFigureTests() {
   group('One pair tests', () {
     test('Pair of fives not found in  hand one', () {
       final onePair = OnePairFigure(CardFace.Five);
@@ -45,7 +45,7 @@ void highCardFigureTests() {
       expect(onePair.findFigureInHand(handTwo), true);
     });
     test('Pair of Aces found in  hand three', () {
-      final onePair = OnePairFigure(CardFace.Ten);
+      final onePair = OnePairFigure(CardFace.Ace);
 
       expect(onePair.findFigureInHand(handThree), true);
     });

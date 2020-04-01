@@ -6,7 +6,7 @@ import 'figure.dart';
 class HighCardFigure extends Figure {
   static const _figureBaseValue = 100;
 
-  CardFace highCardFace;
+  final CardFace highCardFace;
 
   HighCardFigure(this.highCardFace);
 
