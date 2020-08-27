@@ -17,12 +17,12 @@ class OnePairFigure extends Figure {
 
   @override
   bool findFigureInHand(HandModel handModel) {
-    int faceCardFoudn = 0;
+    int faceCardFound = 0;
 
     handModel.cards.forEach((card) {
-      if (card.cardFace == onePairFace) faceCardFoudn++;
+      if (card.cardFace == onePairFace) faceCardFound++;
     });
 
-    return faceCardFoudn >= 2;
+    return faceCardFound >= 2;
   }
 }

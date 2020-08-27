@@ -28,14 +28,14 @@ class TwoPairsFigure extends Figure {
 
   @override
   bool findFigureInHand(HandModel handModel) {
-    int firstFaceCardFoudn = 0;
-    int secondFaceCardFoudn = 0;
+    int firstFaceCardFound = 0;
+    int secondFaceCardFound = 0;
 
     handModel.cards.forEach((card) {
-      if (card.cardFace == firstPairFace) firstFaceCardFoudn++;
-      if (card.cardFace == secondPairFace) secondFaceCardFoudn++;
+      if (card.cardFace == firstPairFace) firstFaceCardFound++;
+      if (card.cardFace == secondPairFace) secondFaceCardFound++;
     });
 
-    return firstFaceCardFoudn >= 2 && secondFaceCardFoudn >= 2;
+    return firstFaceCardFound >= 2 && secondFaceCardFound >= 2;
   }
 }

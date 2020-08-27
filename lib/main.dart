@@ -6,17 +6,15 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 void main() {
-  Get.put(GlobalController());
-
-  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft])
-      .then((_) {
-    runApp(MyApp());
-  });
+  runApp(MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Get.put(GlobalController());
+
     return GetMaterialApp(
       title: 'Blef',
       initialRoute: Routes.game,

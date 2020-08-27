@@ -25,11 +25,12 @@ class _GameScreenState extends State<GameScreen> {
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Color(0xFF228B22), Color(0xFF32CD32)],
-            )),
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [Color(0xFF228B22), Color(0xFF32CD32)],
+              ),
+            ),
           ),
           Container(
             padding: MediaQuery.of(context).viewPadding,
