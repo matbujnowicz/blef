@@ -53,7 +53,7 @@ void onePairFigureTests() {
     test('Pair of Aces value test', () {
       final onePair = OnePairFigure(CardFace.Ace);
 
-      expect(onePair.figureValue(), 214);
+      expect(onePair.figureValue(), 2014);
     });
   });
 

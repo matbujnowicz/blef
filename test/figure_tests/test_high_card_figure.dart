@@ -46,7 +46,7 @@ void highCardFigureTests() {
     test('HC Jack value test', () {
       final highCardKing = HighCardFigure(CardFace.Jack);
 
-      expect(highCardKing.figureValue(), 111);
+      expect(highCardKing.figureValue(), 1011);
     });
 
     test('HC Jack higher than HC 10', () {

@@ -4,15 +4,15 @@ import 'package:blef/logic/models/hand/hand_model.dart';
 import 'figure.dart';
 
 class HighCardFigure extends Figure {
-  static const _figureBaseValue = 100;
-
+  final FigureType figureType = FigureType.HighCard;
   final CardFace highCardFace;
 
   HighCardFigure(this.highCardFace);
 
   @override
   int figureValue() {
-    return _figureBaseValue + CardModel.valueForFace(highCardFace);
+    return Figure.valueForFigureType(figureType) +
+        CardModel.valueForFace(highCardFace);
   }
 
   @override

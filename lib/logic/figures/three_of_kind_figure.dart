@@ -4,15 +4,15 @@ import 'package:blef/logic/models/hand/hand_model.dart';
 import 'figure.dart';
 
 class ThreeOfKindFigure extends Figure {
-  static const _figureBaseValue = 600;
-
+  final FigureType figureType = FigureType.ThreeOfKind;
   final CardFace threeOfKindFace;
 
   ThreeOfKindFigure(this.threeOfKindFace);
 
   @override
   int figureValue() {
-    return _figureBaseValue + CardModel.valueForFace(threeOfKindFace);
+    return Figure.valueForFigureType(figureType) +
+        CardModel.valueForFace(threeOfKindFace);
   }
 
   @override

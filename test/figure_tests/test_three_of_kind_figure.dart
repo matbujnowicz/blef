@@ -52,7 +52,7 @@ void threeOfKindFigureTest() {
     test('3of kind value test', () {
       final figure = ThreeOfKindFigure(CardFace.Two);
 
-      expect(figure.figureValue(), 602);
+      expect(figure.figureValue(), 4002);
     });
 
     test('queens higher than twos', () {

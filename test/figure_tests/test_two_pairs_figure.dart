@@ -48,8 +48,7 @@ void twoPairsFigureTests() {
 
     test('Pair of Aces and twos value test', () {
       final twoPairs = TwoPairsFigure(CardFace.Ace, CardFace.Two);
-
-      expect(twoPairs.figureValue(), 498);
+      expect(twoPairs.figureValue(), 3198);
     });
   });
 

@@ -4,9 +4,9 @@ import 'package:blef/logic/models/hand/hand_model.dart';
 import 'figure.dart';
 
 class TwoPairsFigure extends Figure {
-  static const _figureBaseValue = 300;
   static const _higherFaceMultiplier = 14;
 
+  final FigureType figureType = FigureType.TwoPairs;
   final CardFace firstPairFace;
   final CardFace secondPairFace;
 
@@ -17,11 +17,13 @@ class TwoPairsFigure extends Figure {
   int figureValue() {
     final firstPairFaceValue = CardModel.valueForFace(firstPairFace);
     final secondPairFaceValue = CardModel.valueForFace(secondPairFace);
+    final figureBaseValue = Figure.valueForFigureType(figureType);
+
     if (firstPairFaceValue > secondPairFaceValue)
-      return _figureBaseValue +
+      return figureBaseValue +
           firstPairFaceValue * _higherFaceMultiplier +
           secondPairFaceValue;
-    return _figureBaseValue +
+    return figureBaseValue +
         secondPairFaceValue * _higherFaceMultiplier +
         firstPairFaceValue;
   }

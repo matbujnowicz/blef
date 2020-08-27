@@ -17,7 +17,7 @@ abstract class Figure implements Comparable<Figure> {
 
   int figureValue();
 
-  static int valueFigureType(FigureType figureType) {
+  static int valueForFigureType(FigureType figureType) {
     final allFigureTypes = FigureType.values;
     int index = allFigureTypes.indexOf(figureType);
     index++;

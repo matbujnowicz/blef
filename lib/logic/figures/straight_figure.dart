@@ -4,8 +4,7 @@ import 'package:blef/logic/models/hand/hand_model.dart';
 import 'figure.dart';
 
 class StraightFigure extends Figure {
-  static const _figureBaseValue = 100;
-
+  final FigureType figureType = FigureType.Straight;
   final CardFace fromCardFace;
 
   StraightFigure(this.fromCardFace)
@@ -17,8 +16,9 @@ class StraightFigure extends Figure {
 
   @override
   int figureValue() {
-    if (fromCardFace == CardFace.Ace) return _figureBaseValue + 1;
-    return _figureBaseValue + CardModel.valueForFace(fromCardFace);
+    final figureBaseValue = Figure.valueForFigureType(figureType);
+    if (fromCardFace == CardFace.Ace) return figureBaseValue + 1;
+    return figureBaseValue + CardModel.valueForFace(fromCardFace);
   }
 
   @override
@@ -42,7 +42,7 @@ class StraightFigure extends Figure {
       );
     }
 
-    if (straightCardsFaces != 5)
+    if (straightCardsFaces.length != 5)
       throw Exception("Straight should consist of 5 cards");
 
     straightCardsFaces.forEach((expectedCardFace) {
