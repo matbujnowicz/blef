@@ -4,11 +4,10 @@ import 'package:blef/logic/models/hand/hand_model.dart';
 import 'figure.dart';
 
 class TwoPairsFigure extends Figure {
-  static const _higherFaceMultiplier = 14;
-
   final FigureType figureType = FigureType.TwoPairs;
   final CardFace firstPairFace;
   final CardFace secondPairFace;
+  final _higherFaceMultiplier = CardModel.valueForFace(CardFace.Ace);
 
   TwoPairsFigure(this.firstPairFace, this.secondPairFace)
       : assert(firstPairFace != secondPairFace);

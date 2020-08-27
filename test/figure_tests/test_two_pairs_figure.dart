@@ -28,6 +28,13 @@ final handThree = HandModel([
 
 void twoPairsFigureTests() {
   group('Two pairs tests', () {
+    test('assertion error for the same two pairs', () {
+      expect(
+        () => TwoPairsFigure(CardFace.Five, CardFace.Five),
+        throwsA(isA<AssertionError>()),
+      );
+    });
+
     test('Pair of fives and Aces not found in  hand one', () {
       final twoPairs = TwoPairsFigure(CardFace.Five, CardFace.Ace);
 

@@ -1,3 +1,4 @@
+import 'figure_tests/test_flush_figure.dart';
 import 'figure_tests/test_high_card_figure.dart';
 import 'figure_tests/test_one_pair_figure.dart';
 import 'figure_tests/test_straight_figure.dart';
@@ -10,4 +11,5 @@ void main() {
   twoPairsFigureTests();
   threeOfKindFigureTest();
   straightFigureTest();
+  flushFigureTest();
 }
