@@ -1,8 +1,8 @@
 import 'package:blef/logic/models/card/card_model.dart';
+import 'package:blef/utils/fonts.dart';
+import 'package:blef/utils/style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../utils/style_provider/style.dart';
 
 class CardWidget extends StatelessWidget {
   final CardModel cardModel;
@@ -20,7 +20,7 @@ class CardWidget extends StatelessWidget {
           children: <Widget>[
             Text(
               _textForFace(),
-              style: Style.of(context).font.bold,
+              style: normalFont(fontWeight: FontWeight.bold),
             ),
             Container(
               margin: const EdgeInsets.only(left: 0.5),
@@ -28,7 +28,7 @@ class CardWidget extends StatelessWidget {
             ),
           ]),
       decoration: BoxDecoration(
-          color: Style.of(context).colors.background,
+          color: Style.colors.background,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
@@ -48,25 +48,25 @@ class CardWidget extends StatelessWidget {
     switch (cardModel.cardSuit) {
       case CardSuit.Spades:
         return SvgPicture.asset(
-          Style.of(context).asset.spades,
+          Style.svgAssets.spades,
           height: 10,
           width: 10,
         );
       case CardSuit.Hearts:
         return SvgPicture.asset(
-          Style.of(context).asset.hearts,
+          Style.svgAssets.hearts,
           height: 10,
           width: 10,
         );
       case CardSuit.Diamonds:
         return SvgPicture.asset(
-          Style.of(context).asset.diamonds,
+          Style.svgAssets.diamonds,
           height: 10,
           width: 10,
         );
       case CardSuit.Clubs:
         return SvgPicture.asset(
-          Style.of(context).asset.clubs,
+          Style.svgAssets.clubs,
           height: 10,
           width: 10,
         );
