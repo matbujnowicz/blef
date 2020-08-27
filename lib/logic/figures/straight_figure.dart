@@ -30,20 +30,28 @@ class StraightFigure extends Figure {
 
     if (fromCardFace == CardFace.Ace) {
       straightCardsFaces = allFaces.sublist(
-        allFaces.length - 4,
-        allFaces.length,
+        0,
+        4,
       );
-      straightCardsFaces.add(CardFace.Ace);
+      straightCardsFaces.insert(0, CardFace.Ace);
     } else {
       final fromCardFaceIndex = allFaces.indexOf(fromCardFace);
       straightCardsFaces = allFaces.sublist(
-        fromCardFaceIndex - 4,
-        fromCardFaceIndex + 1,
+        fromCardFaceIndex,
+        fromCardFaceIndex + 5,
       );
     }
 
-    straightCardsFaces.forEach((cardFace) {
-      if (!handModel.cards.contains(cardFace)) figureFound = false;
+    if (straightCardsFaces != 5)
+      throw Exception("Straight should consist of 5 cards");
+
+    straightCardsFaces.forEach((expectedCardFace) {
+      bool expectedCardFaceFound = false;
+      handModel.cards.forEach((presentCard) {
+        if (presentCard.cardFace == expectedCardFace)
+          expectedCardFaceFound = true;
+      });
+      if (!expectedCardFaceFound) figureFound = false;
     });
 
     return figureFound;
