@@ -26,7 +26,7 @@ final handTwo = HandModel([
 ]);
 
 void flushFigureTest() {
-  group('Straight tests', () {
+  group('Flush tests', () {
     test('diamonds flush present in hand one', () {
       final figure = FlushFigure(CardSuit.Diamonds);
 

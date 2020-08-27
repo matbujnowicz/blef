@@ -4,7 +4,7 @@ import 'package:blef/logic/models/hand/hand_model.dart';
 import 'figure.dart';
 
 class FullHouseFigure extends Figure {
-  final FigureType figureType = FigureType.TwoPairs;
+  final FigureType figureType = FigureType.FullHouse;
   final CardFace threeOfKindFace;
   final CardFace pairFace;
   final _majorFaceMultiplier = CardModel.valueForFace(CardFace.Ace);
