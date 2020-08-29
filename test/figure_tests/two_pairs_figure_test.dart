@@ -26,7 +26,7 @@ final handThree = HandModel([
   CardModel(cardSuit: CardSuit.Diamonds, cardFace: CardFace.Ace),
 ]);
 
-void twoPairsFigureTests() {
+void main() {
   group('Two pairs tests', () {
     test('assertion error for the same two pairs', () {
       expect(

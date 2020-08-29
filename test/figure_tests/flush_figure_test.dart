@@ -24,8 +24,7 @@ final handTwo = HandModel([
   CardModel(cardSuit: CardSuit.Spades, cardFace: CardFace.Queen),
   CardModel(cardSuit: CardSuit.Spades, cardFace: CardFace.Ace),
 ]);
-
-void flushFigureTest() {
+void main() {
   group('Flush tests', () {
     test('diamonds flush present in hand one', () {
       final figure = FlushFigure(CardSuit.Diamonds);

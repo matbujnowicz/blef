@@ -25,7 +25,7 @@ final handTwo = HandModel([
   CardModel(cardSuit: CardSuit.Spades, cardFace: CardFace.Ace),
 ]);
 
-void straightFigureTest() {
+void main() {
   group('Straight tests', () {
     test('assertion error for straight starting from Jack', () {
       expect(

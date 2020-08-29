@@ -17,7 +17,7 @@ final handTwo = HandModel([
   CardModel(cardSuit: CardSuit.Spades, cardFace: CardFace.Ten),
 ]);
 
-void highCardFigureTests() {
+void main() {
   group('High card tests', () {
     test('HC Ace present in  hand one', () {
       final highCardAce = HighCardFigure(CardFace.Ace);

@@ -1,3 +1,4 @@
+import 'package:blef/logic/figures/flush_figure.dart';
 import 'package:blef/logic/figures/full_house_figure.dart';
 import 'package:blef/logic/models/card/card_model.dart';
 import 'package:blef/logic/models/hand/hand_model.dart';
@@ -30,7 +31,7 @@ final handThree = HandModel([
   CardModel(cardSuit: CardSuit.Diamonds, cardFace: CardFace.Ace),
 ]);
 
-void fullHouseFigureTests() {
+void main() {
   group('Full House tests', () {
     test('assertion error for the same three of kind and pair face', () {
       expect(
@@ -79,46 +80,32 @@ void fullHouseFigureTests() {
       expect(figure.figureValue(), 7164);
     });
 
-    // test('twos and threes vs one pair of ace', () {
-    //   final twoPairs = TwoPairsFigure(CardFace.Two, CardFace.Three);
-    //   final onePair = OnePairFigure(CardFace.Ace);
+    test('FH 3/2 is higher than FH 2/A', () {
+      final fig1 = FullHouseFigure(CardFace.Three, CardFace.Two);
+      final fig2 = FullHouseFigure(CardFace.Two, CardFace.Ace);
 
-    //   expect(twoPairs.compareTo(onePair), 1);
-    // });
+      expect(fig1.compareTo(fig2), 1);
+    });
 
-    // test('jack nine higher than three four', () {
-    //   final twoPairs1 = TwoPairsFigure(CardFace.Jack, CardFace.Nine);
-    //   final twoPairs2 = TwoPairsFigure(CardFace.Three, CardFace.Four);
+    test('FH J/K is higher than FH J/Q', () {
+      final fig1 = FullHouseFigure(CardFace.Jack, CardFace.King);
+      final fig2 = FullHouseFigure(CardFace.Jack, CardFace.Queen);
 
-    //   expect(twoPairs1.compareTo(twoPairs2), 1);
-    // });
+      expect(fig1.compareTo(fig2), 1);
+    });
 
-    // test('king queen higher than two queen', () {
-    //   final twoPairs1 = TwoPairsFigure(CardFace.King, CardFace.Queen);
-    //   final twoPairs2 = TwoPairsFigure(CardFace.Two, CardFace.Queen);
+    test('FH K/5 equals FH K/5', () {
+      final fig1 = FullHouseFigure(CardFace.King, CardFace.Five);
+      final fig2 = FullHouseFigure(CardFace.King, CardFace.Five);
 
-    //   expect(twoPairs1.compareTo(twoPairs2), 1);
-    // });
+      expect(fig1.compareTo(fig2), 0);
+    });
 
-    // test('ace two higher king queen', () {
-    //   final twoPairs1 = TwoPairsFigure(CardFace.King, CardFace.Queen);
-    //   final twoPairs2 = TwoPairsFigure(CardFace.Two, CardFace.Ace);
+    test('FH 2/3 is higher than Flush of Spades', () {
+      final fig1 = FullHouseFigure(CardFace.Two, CardFace.Three);
+      final fig2 = FlushFigure(CardSuit.Spades);
 
-    //   expect(twoPairs1.compareTo(twoPairs2), -1);
-    // });
-
-    // test('king two higher jack queen', () {
-    //   final twoPairs1 = TwoPairsFigure(CardFace.Jack, CardFace.Queen);
-    //   final twoPairs2 = TwoPairsFigure(CardFace.Two, CardFace.King);
-
-    //   expect(twoPairs1.compareTo(twoPairs2), -1);
-    // });
-
-    // test('Pairs equal', () {
-    //   final twoPairs1 = TwoPairsFigure(CardFace.Ten, CardFace.Jack);
-    //   final twoPairs2 = TwoPairsFigure(CardFace.Ten, CardFace.Jack);
-
-    //   expect(twoPairs1.compareTo(twoPairs2), 0);
-    // });
+      expect(fig1.compareTo(fig2), 1);
+    });
   });
 }

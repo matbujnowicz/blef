@@ -29,7 +29,7 @@ final handThree = HandModel([
   CardModel(cardSuit: CardSuit.Spades, cardFace: CardFace.Ten),
 ]);
 
-void threeOfKindFigureTest() {
+void main() {
   group('three of kind tests', () {
     test('3of kind not pres in hand one', () {
       final figure = ThreeOfKindFigure(CardFace.Ace);

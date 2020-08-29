@@ -25,7 +25,7 @@ final handThree = HandModel([
   CardModel(cardSuit: CardSuit.Diamonds, cardFace: CardFace.Ace),
 ]);
 
-void onePairFigureTests() {
+void main() {
   group('One pair tests', () {
     test('Pair of fives not found in  hand one', () {
       final onePair = OnePairFigure(CardFace.Five);
