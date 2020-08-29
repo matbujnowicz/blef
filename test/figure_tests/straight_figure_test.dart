@@ -97,6 +97,13 @@ void main() {
       expect(fig1.compareTo(fig2), 1);
     });
 
+    test('Straight from 10 equals Straight from 10', () {
+      final fig1 = StraightFigure(CardFace.Ten);
+      final fig2 = StraightFigure(CardFace.Ten);
+
+      expect(fig1.compareTo(fig2), 0);
+    });
+
     test('Straight from Ace higher than Three of Kind of Aces', () {
       final fig1 = StraightFigure(CardFace.Ace);
       final fig2 = ThreeOfKindFigure(CardFace.Ace);

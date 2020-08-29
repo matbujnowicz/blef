@@ -69,6 +69,13 @@ void main() {
       expect(fig1.compareTo(fig2), -1);
     });
 
+    test('queens equals queens', () {
+      final fig1 = ThreeOfKindFigure(CardFace.Queen);
+      final fig2 = ThreeOfKindFigure(CardFace.Queen);
+
+      expect(fig1.compareTo(fig2), 0);
+    });
+
     test('3twos higher than pair of aces and kings', () {
       final fig1 = ThreeOfKindFigure(CardFace.Two);
       final fig2 = TwoPairsFigure(CardFace.Ace, CardFace.King);

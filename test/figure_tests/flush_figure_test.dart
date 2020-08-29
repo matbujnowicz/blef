@@ -69,6 +69,12 @@ void main() {
       expect(fig1.compareTo(fig2), 1);
     });
 
+    test('Flush hearts equals Flush hearts', () {
+      final fig1 = FlushFigure(CardSuit.Hearts);
+      final fig2 = FlushFigure(CardSuit.Hearts);
+
+      expect(fig1.compareTo(fig2), 0);
+    });
     test('Straight from 10 higher than Straight from 9', () {
       final fig1 = FlushFigure(CardSuit.Clubs);
       final fig2 = StraightFigure(CardFace.Ten);
