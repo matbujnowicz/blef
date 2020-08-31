@@ -1,6 +1,5 @@
 import 'package:blef/logic/figures/four_of_kind_figure.dart';
 import 'package:blef/logic/figures/full_house_figure.dart';
-import 'package:blef/logic/figures/two_pairs_figure.dart';
 import 'package:blef/logic/models/card/card_model.dart';
 import 'package:blef/logic/models/hand/hand_model.dart';
 import 'package:test/test.dart';
