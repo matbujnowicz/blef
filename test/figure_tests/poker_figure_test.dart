@@ -1,5 +1,5 @@
+import 'package:blef/logic/figures/four_of_kind_figure.dart';
 import 'package:blef/logic/figures/poker_figure.dart';
-import 'package:blef/logic/figures/three_of_kind_figure.dart';
 import 'package:blef/logic/models/card/card_model.dart';
 import 'package:blef/logic/models/hand/hand_model.dart';
 import 'package:test/test.dart';
@@ -66,7 +66,7 @@ void main() {
     });
 
     test('poker Ace/diamonds not present in hand two', () {
-      final figure = PokerFigure(CardFace.Ace, CardSuit.Clubs);
+      final figure = PokerFigure(CardFace.Ace, CardSuit.Diamonds);
 
       expect(figure.findFigureInHand(handTwo), false);
     });
@@ -77,44 +77,45 @@ void main() {
       expect(figure.findFigureInHand(handThree), true);
     });
 
-    // test('straight starting from Ace value test', () {
-    //   final figure = StraightFigure(CardFace.Ace);
+    test('ROYAL POKER value test', () {
+      final figure = PokerFigure(CardFace.Ten, CardSuit.Spades);
 
-    //   expect(figure.figureValue(), 5001);
-    // });
+      expect(figure.figureValue(), 9066);
+    });
 
-    // test('straight starting from Six value test', () {
-    //   final figure = StraightFigure(CardFace.Six);
+    test('Weakest poker is higher than four Aces', () {
+      final figure1 = PokerFigure(CardFace.Ace, CardSuit.Clubs);
+      final figure2 = FourOfKindFigure(CardFace.Ace);
 
-    //   expect(figure.figureValue(), 5006);
-    // });
+      expect(figure1.compareTo(figure2), 1);
+    });
 
-    // test('Straight from 2 higher than Straight from Ace', () {
-    //   final fig1 = StraightFigure(CardFace.Two);
-    //   final fig2 = StraightFigure(CardFace.Ace);
+    test('Weakest poker is equal to weakst poker', () {
+      final figure1 = PokerFigure(CardFace.Ace, CardSuit.Clubs);
+      final figure2 = PokerFigure(CardFace.Ace, CardSuit.Clubs);
 
-    //   expect(fig1.compareTo(fig2), 1);
-    // });
+      expect(figure1.compareTo(figure2), 0);
+    });
 
-    // test('Straight from 10 higher than Straight from 9', () {
-    //   final fig1 = StraightFigure(CardFace.Ten);
-    //   final fig2 = StraightFigure(CardFace.Nine);
+    test('lowest diamnonds is higher than royal clubs is', () {
+      final figure1 = PokerFigure(CardFace.Ace, CardSuit.Diamonds);
+      final figure2 = PokerFigure(CardFace.Ten, CardSuit.Clubs);
 
-    //   expect(fig1.compareTo(fig2), 1);
-    // });
+      expect(figure1.compareTo(figure2), 1);
+    });
 
-    // test('Straight from 10 equals Straight from 10', () {
-    //   final fig1 = StraightFigure(CardFace.Ten);
-    //   final fig2 = StraightFigure(CardFace.Ten);
+    test('8 spades is higher than 7 spades', () {
+      final figure1 = PokerFigure(CardFace.Eight, CardSuit.Spades);
+      final figure2 = PokerFigure(CardFace.Seven, CardSuit.Spades);
 
-    //   expect(fig1.compareTo(fig2), 0);
-    // });
+      expect(figure1.compareTo(figure2), 1);
+    });
 
-    // test('Straight from Ace higher than Three of Kind of Aces', () {
-    //   final fig1 = StraightFigure(CardFace.Ace);
-    //   final fig2 = ThreeOfKindFigure(CardFace.Ace);
+    test('8 spades is higher than 8 hearts', () {
+      final figure1 = PokerFigure(CardFace.Eight, CardSuit.Spades);
+      final figure2 = PokerFigure(CardFace.Seven, CardSuit.Hearts);
 
-    //   expect(fig1.compareTo(fig2), 1);
-    // });
+      expect(figure1.compareTo(figure2), 1);
+    });
   });
 }

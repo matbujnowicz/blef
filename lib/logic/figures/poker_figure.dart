@@ -8,6 +8,8 @@ class PokerFigure extends Figure {
   final CardFace fromCardFace;
   final CardSuit cardSuit;
 
+  final _higherFaceMultiplier = CardModel.valueForFace(CardFace.Ace);
+
   PokerFigure(this.fromCardFace, this.cardSuit)
       : assert(
           fromCardFace == CardFace.Ace ||
@@ -17,7 +19,8 @@ class PokerFigure extends Figure {
 
   @override
   int figureValue() {
-    final figureBaseValue = Figure.valueForFigureType(figureType);
+    final figureBaseValue = Figure.valueForFigureType(figureType) +
+        CardModel.valueForSuit(cardSuit) * _higherFaceMultiplier;
     if (fromCardFace == CardFace.Ace) return figureBaseValue + 1;
     return figureBaseValue + CardModel.valueForFace(fromCardFace);
   }
