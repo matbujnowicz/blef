@@ -11,9 +11,7 @@ class HandModel {
 
   bool isThisFigureFound(Figure figure) => _foundFigures.contains(figure);
 
-  //todo fidning all figures in hand
-
-  int cardsInHand() => cards.length;
+  int size() => cards.length;
 
   HandModel(this.cards);
 }

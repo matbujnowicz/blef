@@ -1,0 +1,17 @@
+Gra:
+- List (Player)
+- List (Round)
+
+Round:
+constructor take starting player
+- current player 
+- current BID (figure)
+func check() -> finish round, return loosing player, start new round in game
+func bid() -> current player++
+
+
+Player:
+- hand
+- cardCount
+
+Talia - shuffle, get hands for players
